@@ -1,0 +1,69 @@
+.notification{
+
+    position:fixed;
+
+    top:25px;
+
+    right:25px;
+
+    min-width:300px;
+
+    padding:16px 22px;
+
+    border-radius:12px;
+
+    color:white;
+
+    font-weight:600;
+
+    z-index:9999;
+
+    animation:slideIn .35s ease;
+
+    box-shadow:0 15px 30px rgba(0,0,0,.3);
+
+}
+
+.success{
+
+    background:#22c55e;
+
+}
+
+.error{
+
+    background:#ef4444;
+
+}
+
+.warning{
+
+    background:#f59e0b;
+
+}
+
+.info{
+
+    background:#3b82f6;
+
+}
+
+@keyframes slideIn{
+
+from{
+
+opacity:0;
+
+transform:translateX(120px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateX(0);
+
+}
+
+}

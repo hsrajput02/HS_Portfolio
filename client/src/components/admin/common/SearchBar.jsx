@@ -1,0 +1,29 @@
+function SearchBar({
+    value,
+    onChange,
+    placeholder
+}) {
+
+    return (
+
+        <div className="searchBar">
+
+            <input
+
+                type="text"
+
+                placeholder={placeholder}
+
+                value={value}
+
+                onChange={(e)=>onChange(e.target.value)}
+
+            />
+
+        </div>
+
+    );
+
+}
+
+export default SearchBar;

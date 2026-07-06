@@ -1,0 +1,424 @@
+/*
+   PROJECTS SECTION
+*/
+
+.projects{
+
+    position:relative;
+
+    width:90%;
+
+    margin:120px auto;
+
+}
+
+/* Background Glow */
+
+.projects::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:340px;
+
+    height:340px;
+
+    top:60px;
+
+    right:-120px;
+
+    border-radius:50%;
+
+    background:rgba(124,58,237,.10);
+
+    filter:blur(120px);
+
+    z-index:-1;
+
+}
+
+/*
+   GRID
+*/
+
+.projectGrid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(360px,1fr));
+
+    gap:35px;
+
+}
+
+/*
+   CARD
+*/
+
+.projectCard{
+
+    overflow:hidden;
+
+    border-radius:22px;
+
+    background:#0f172a;
+
+    border:1px solid rgba(255,255,255,.06);
+
+    transition:
+        transform .35s,
+        border-color .35s,
+        box-shadow .35s;
+
+}
+
+.projectCard:hover{
+
+    border-color:#8b5cf6;
+
+    box-shadow:
+        0 25px 55px rgba(124,58,237,.22);
+
+}
+
+/*
+   IMAGE
+*/
+
+.projectImage{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.projectImage img{
+
+    width:100%;
+
+    height:230px;
+
+    object-fit:cover;
+
+    transition:
+        transform .5s ease;
+
+}
+
+.projectCard:hover .projectImage img{
+
+    transform:scale(1.08);
+
+}
+
+/* Overlay */
+
+.imageOverlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+        linear-gradient(
+
+            to top,
+
+            rgba(5,8,22,.65),
+
+            transparent
+
+        );
+
+    opacity:0;
+
+    transition:.35s;
+
+}
+
+.projectCard:hover .imageOverlay{
+
+    opacity:1;
+
+}
+
+/*
+   CONTENT
+*/
+
+.projectContent{
+
+    padding:26px;
+
+}
+
+.projectContent h3{
+
+    font-size:24px;
+
+    margin-bottom:14px;
+
+    color:white;
+
+}
+
+.projectContent p{
+
+    color:#c4c4c4;
+
+    line-height:1.8;
+
+}
+
+/*
+   TECH STACK
+*/
+
+.techStack{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:10px;
+
+    margin:25px 0;
+
+}
+
+.techStack span{
+
+    padding:8px 16px;
+
+    border-radius:30px;
+
+    background:#1f2937;
+
+    color:#d1d5db;
+
+    font-size:13px;
+
+    border:1px solid transparent;
+
+    transition:
+        transform .3s,
+        background .3s,
+        border-color .3s;
+
+}
+
+.techStack span:hover{
+
+    background:#8b5cf6;
+
+    color:white;
+
+    border-color:#8b5cf6;
+
+}
+
+/*
+   BUTTONS
+*/
+
+.projectButtons{
+
+    display:flex;
+
+    gap:14px;
+
+}
+
+.projectButtons a{
+
+    flex:1;
+
+}
+
+.projectButtons button{
+
+    width:100%;
+
+    padding:14px;
+
+    border:none;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    background:#7c3aed;
+
+    color:white;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    transition:
+        transform .3s,
+        background .3s,
+        box-shadow .3s;
+
+}
+
+.projectButtons button:hover{
+
+    background:#8b5cf6;
+
+    transform:translateY(-3px);
+
+    box-shadow:
+
+        0 15px 30px rgba(124,58,237,.30);
+
+}
+
+/*
+   STATUS MESSAGE
+*/
+
+.statusMessage{
+
+    text-align:center;
+
+    margin-top:40px;
+
+    color:#9ca3af;
+
+    font-size:18px;
+
+}
+
+.statusMessage.error{
+
+    color:#ef4444;
+
+}
+
+.disabledBtn{
+    display:none;
+   
+    
+}
+
+
+/*
+   TABLET
+*/
+
+@media(max-width:992px){
+
+.projects{
+
+    width:92%;
+
+}
+
+.projectGrid{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+.projectContent{
+
+    padding:22px;
+
+}
+
+.projectContent h3{
+
+    font-size:22px;
+
+}
+
+}
+
+/*
+   MOBILE
+*/
+
+@media(max-width:768px){
+
+.projects{
+
+    margin:90px auto;
+
+}
+
+.projectGrid{
+
+    grid-template-columns:1fr;
+
+}
+
+.projectImage img{
+
+    height:210px;
+
+}
+
+.projectButtons{
+
+    flex-direction:column;
+
+}
+
+.projectButtons button{
+
+    width:100%;
+
+}
+
+}
+
+/*
+   SMALL MOBILE
+*/
+
+@media(max-width:480px){
+
+.projects{
+
+    width:94%;
+
+}
+
+.projectContent{
+
+    padding:20px;
+
+}
+
+.projectContent h3{
+
+    font-size:20px;
+
+}
+
+.projectContent p{
+
+    font-size:15px;
+
+}
+
+.techStack{
+
+    gap:8px;
+
+}
+
+.techStack span{
+
+    font-size:12px;
+
+    padding:7px 14px;
+
+}
+
+}
+

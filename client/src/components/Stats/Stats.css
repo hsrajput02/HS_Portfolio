@@ -1,0 +1,262 @@
+/*
+   STATS SECTION
+*/
+
+.stats{
+
+    position:relative;
+
+    width:90%;
+
+    margin:-40px auto 100px;
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:25px;
+
+}
+
+/*
+   CARD
+*/
+
+.statCard{
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:#0f172a;
+
+    border:1px solid rgba(255,255,255,.06);
+
+    border-radius:20px;
+
+    padding:35px;
+
+    text-align:center;
+
+    transition:
+        transform .35s,
+        border-color .35s,
+        box-shadow .35s;
+
+}
+
+/* Glow */
+
+.statCard::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:180px;
+
+    height:180px;
+
+    top:-80px;
+
+    right:-80px;
+
+    border-radius:50%;
+
+    background:rgba(124,58,237,.12);
+
+    filter:blur(60px);
+
+    opacity:0;
+
+    transition:.4s;
+
+}
+
+.statCard:hover::before{
+
+    opacity:1;
+
+}
+
+.statCard:hover{
+
+    transform:translateY(-10px);
+
+    border-color:#8b5cf6;
+
+    box-shadow:
+
+        0 25px 50px rgba(124,58,237,.22);
+
+}
+
+/*
+   ICON
+*/
+
+.statIcon{
+
+    width:70px;
+
+    height:70px;
+
+    margin:0 auto 22px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-radius:50%;
+
+    background:rgba(124,58,237,.12);
+
+    color:#8b5cf6;
+
+    font-size:30px;
+
+    transition:
+        transform .35s,
+        background .35s;
+
+}
+
+.statCard:hover .statIcon{
+
+    background:#8b5cf6;
+
+    color:white;
+
+    transform:rotate(12deg) scale(1.1);
+
+}
+
+/*
+   NUMBER
+*/
+
+.statCard h2{
+
+    font-size:42px;
+
+    color:white;
+
+    margin-bottom:10px;
+
+    font-weight:700;
+
+}
+
+/*
+   TITLE
+*/
+
+.statCard p{
+
+    color:#bdbdbd;
+
+    font-size:15px;
+
+    line-height:1.6;
+
+}
+
+/*
+   TABLET
+*/
+
+@media (max-width:992px){
+
+.stats{
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:20px;
+
+}
+
+.statCard{
+
+    padding:30px;
+
+}
+
+}
+
+/*
+   MOBILE
+*/
+
+@media (max-width:768px){
+
+.stats{
+
+    margin:50px auto 80px;
+
+}
+
+.statCard{
+
+    padding:28px;
+
+}
+
+.statIcon{
+
+    width:62px;
+
+    height:62px;
+
+    font-size:26px;
+
+}
+
+.statCard h2{
+
+    font-size:36px;
+
+}
+
+}
+
+/*
+   SMALL MOBILE
+*/
+
+@media (max-width:480px){
+
+.stats{
+
+    grid-template-columns:repeat(2,1fr);
+    gap :12px;
+
+
+}
+
+.statCard{
+
+    padding:24px;
+
+}
+
+.statCard h2{
+
+    font-size:34px;
+
+}
+
+.statCard p{
+
+    font-size:14px;
+
+}
+
+}
+
+@media (max-width:350px){  
+ .stats{    grid-template-columns:1fr;
+    width:92%;
+}
+}

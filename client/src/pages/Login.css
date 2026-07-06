@@ -1,0 +1,123 @@
+.loginPage{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:#050816;
+
+    padding:20px;
+
+}
+
+.loginCard{
+
+    width:100%;
+
+    max-width:420px;
+
+    background:#0f172a;
+
+    border-radius:20px;
+
+    padding:40px;
+
+    box-shadow:0 20px 40px rgba(0,0,0,.4);
+
+    border:1px solid rgba(255,255,255,.08);
+
+}
+
+.loginCard h1{
+
+    text-align:center;
+
+    color:#8b5cf6;
+
+    margin-bottom:10px;
+
+    font-size:34px;
+
+}
+
+.loginCard p{
+
+    text-align:center;
+
+    color:#94a3b8;
+
+    margin-bottom:35px;
+
+}
+
+.loginForm{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:20px;
+
+}
+
+.loginForm input{
+
+    padding:15px 18px;
+
+    background:#111827;
+
+    border:1px solid #2d3748;
+
+    color:white;
+
+    border-radius:12px;
+
+    outline:none;
+
+    font-size:15px;
+
+    transition:.3s;
+
+}
+
+.loginForm input:focus{
+
+    border-color:#8b5cf6;
+
+    box-shadow:0 0 10px rgba(139,92,246,.35);
+
+}
+
+.loginForm button{
+
+    padding:15px;
+
+    background:linear-gradient(90deg,#7c3aed,#8b5cf6);
+
+    border:none;
+
+    color:white;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.loginForm button:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:0 10px 25px rgba(139,92,246,.35);
+
+}

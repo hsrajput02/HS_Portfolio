@@ -1,0 +1,294 @@
+/* FOOTER */
+
+.footer{
+
+    position:relative;
+
+    margin-top:120px;
+
+    padding:70px 20px 40px;
+
+    border-top:1px solid rgba(255,255,255,.06);
+
+    overflow:hidden;
+
+}
+
+/* Background Glow */
+
+.footer::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:420px;
+
+    height:420px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    top:-250px;
+
+    border-radius:50%;
+
+    background:rgba(124,58,237,.10);
+
+    filter:blur(130px);
+
+    z-index:-1;
+
+}
+
+/*
+   CONTENT
+*/
+
+.footerContent{
+
+    max-width:900px;
+
+    margin:auto;
+
+    text-align:center;
+
+}
+
+.footer h2{
+
+    font-size:34px;
+
+    color:#8b5cf6;
+
+    margin-bottom:16px;
+
+    font-weight:700;
+
+}
+
+.footer p{
+
+    color:#9ca3af;
+
+    line-height:1.8;
+
+    max-width:700px;
+
+    margin:0 auto 35px;
+
+}
+
+/* SOCIAL ICONS */
+
+.footerSocial{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:18px;
+
+    margin-bottom:35px;
+
+}
+
+.footerSocial a{
+
+    width:52px;
+
+    height:52px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-radius:50%;
+
+    background:#111827;
+
+    color:white;
+
+    font-size:22px;
+
+    transition:
+        transform .35s,
+        background .35s,
+        box-shadow .35s;
+
+}
+
+.footerSocial a:hover{
+
+    background:#8b5cf6;
+
+    transform:translateY(-4px);
+
+    box-shadow:
+
+        0 18px 35px rgba(124,58,237,.30);
+
+}
+
+/*
+   COPYRIGHT
+*/
+
+.footer small{
+
+    display:block;
+
+    color:#6b7280;
+
+    font-size:15px;
+
+    margin-top:10px;
+
+}
+
+/*
+   SCROLL TOP BUTTON
+*/
+
+.scrollTop{
+
+    position:fixed;
+
+    right:28px;
+
+    bottom:28px;
+
+    width:55px;
+
+    height:55px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#7c3aed;
+
+    color:white;
+
+    font-size:20px;
+
+    cursor:pointer;
+
+    z-index:999;
+
+    transition:
+        transform .35s,
+        background .35s,
+        box-shadow .35s;
+
+    box-shadow:
+
+        0 15px 35px rgba(124,58,237,.35);
+
+}
+
+.scrollTop:hover{
+
+    background:#8b5cf6;
+
+    box-shadow:
+
+        0 20px 40px rgba(124,58,237,.40);
+
+}
+
+/*
+   TABLET
+*/
+
+@media(max-width:992px){
+
+.footer{
+
+    margin-top:100px;
+
+}
+
+.footer h2{
+
+    font-size:30px;
+
+}
+
+}
+
+/*
+   MOBILE
+*/
+
+@media(max-width:768px){
+
+.footer{
+
+    margin-top:90px;
+
+    padding:60px 20px 35px;
+
+}
+
+.footer h2{
+
+    font-size:26px;
+
+}
+
+.footer p{
+
+    font-size:15px;
+
+}
+
+.scrollTop{
+
+    width:48px;
+
+    height:48px;
+
+    right:18px;
+
+    bottom:18px;
+
+    font-size:18px;
+
+}
+
+}
+
+/*
+   SMALL MOBILE
+*/
+
+@media(max-width:480px){
+
+.footerSocial{
+
+    gap:14px;
+
+}
+
+.footerSocial a{
+
+    width:46px;
+
+    height:46px;
+
+    font-size:20px;
+
+}
+
+.footer small{
+
+    font-size:13px;
+
+}
+
+}
+

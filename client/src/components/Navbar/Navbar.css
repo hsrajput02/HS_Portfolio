@@ -1,0 +1,572 @@
+/*
+   NAVBAR
+*/
+
+.navbar{
+
+    width:100%;
+    height:85px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:0 80px;
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    z-index:1000;
+
+    background:rgba(5,8,22,.95);
+
+    border-bottom:1px solid rgba(255,255,255,.05);
+
+    backdrop-filter:blur(0px);
+
+    transition:
+        background .35s ease,
+        backdrop-filter .35s ease,
+        box-shadow .35s ease,
+        padding .35s ease;
+
+}
+
+/* Activated from React */
+
+.navbarScrolled{
+
+    background:rgba(5,8,22,.72);
+
+    backdrop-filter:blur(18px);
+
+    box-shadow:
+        0 12px 35px rgba(0,0,0,.25);
+
+}
+
+/*
+   LOGO
+*/
+
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    cursor:pointer;
+
+    user-select:none;
+
+}
+
+.logoBox{
+
+    width:45px;
+
+    height:45px;
+
+    border-radius:12px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:white;
+
+    font-weight:700;
+
+    font-size:18px;
+
+    background:
+    linear-gradient(135deg,#6d28d9,#8b5cf6);
+
+    transition:
+    transform .35s ease,
+    box-shadow .35s ease;
+
+}
+
+.logo:hover .logoBox{
+
+    transform:
+    rotate(-8deg)
+    scale(1.05);
+    background: linear-gradient(to right, #9c3de2, #5a5cf5);
+    box-shadow:
+    0 10px 30px rgba(139,92,246,.35);
+    cursor: pointer;
+
+}
+
+.logo h2{
+
+    color:white;
+
+    font-size:24px;
+
+    font-weight:700;
+
+}
+
+.logo span{
+
+    color:#9f67ff;
+
+}
+
+/*
+   DESKTOP NAVIGATION
+*/
+
+.navLinks{
+
+    display:flex;
+
+    gap:45px;
+
+    align-items:center;
+
+}
+
+.navLinks li{
+
+    list-style:none;
+
+}
+
+.navLinks li a{
+
+    position:relative;
+
+    color:#d1d5db;
+
+    text-decoration:none;
+
+    font-size:17px;
+
+    font-weight:500;
+
+    transition:
+    color .3s ease;
+
+}
+
+.navLinks li a:hover{
+
+    color:white;
+
+}
+
+/* Underline Animation */
+
+.navLinks li a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-8px;
+
+    width:0;
+
+    height:3px;
+
+    border-radius:50px;
+
+    background:linear-gradient(to right, #9c3de2, #5a5cf5);
+
+    transition:width .35s ease;
+
+}
+
+.navLinks li a:hover::after{
+
+    width:100%;
+
+}
+
+/*
+   LOGIN BUTTON
+*/
+
+.loginBtn{
+
+    padding:13px 28px;
+
+    border-radius:14px;
+
+    background:transparent;
+
+    border:1px solid #8b5cf6;
+
+    color:#9f67ff;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+    font-weight:500;
+
+    transition:
+        all .35s ease;
+
+}
+
+.loginBtn:hover{
+
+    background:linear-gradient(to right, #9c3de2, #5a5cf5);
+
+    color:white;
+
+    transform:
+    translateY(-2px);
+
+    box-shadow:
+    0 12px 28px rgba(139,92,246,.35);
+
+}
+
+.loginBtn:active{
+
+    transform:scale(.97);
+
+}
+/*
+   TABLET
+*/
+
+@media (max-width:992px){
+
+    .navbar{
+
+        padding:0 40px;
+
+    }
+
+    .navLinks{
+
+        gap:24px;
+
+    }
+
+    .logo h2{
+
+        font-size:20px;
+
+    }
+
+}
+
+/*
+   HAMBURGER
+*/
+
+.menuIcon{
+
+    top:22px;
+
+    right:22px;
+
+    width:46px;
+
+    height:46px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:rgba(255,255,255,.08);
+
+    color:white;
+
+    font-size:24px;
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    cursor:pointer;
+
+    cursor:pointer;
+
+    transition:
+        color .3s ease,
+        transform .3s ease;
+
+    z-index:1001;
+
+}
+
+.menuIcon:hover{
+
+    color:#8b5cf6;
+
+    transform:rotate(90deg);
+
+}
+
+/*
+   MOBILE MENU
+*/
+.drawerClose{
+
+    position:absolute;
+
+    top:22px;
+
+    right:22px;
+
+    width:46px;
+
+    height:46px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:rgba(255,255,255,.08);
+
+    color:white;
+
+    font-size:24px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.drawerClose:hover{
+
+    background:#8b5cf6;
+
+    transform:rotate(90deg);
+
+}
+
+.mobileMenu{
+
+    position:fixed;
+
+    top:0;
+
+    right:0;
+
+    width:280px;
+
+    height:100vh;
+
+    overflow-y:auto;
+
+    background:#0b1020;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    box-shadow:-15px 0 40px rgba(0,0,0,.45);
+
+    z-index:9999;
+
+}
+
+.mobileLinks{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:28px;
+
+    width:100%;
+
+}
+
+.mobileLinks a{
+
+    color:white;
+
+    text-decoration:none;
+
+    font-size:22px;
+
+    font-weight:500;
+
+    transition:.3s;
+
+}
+
+.mobileLinks a:hover{
+
+    color:#8b5cf6;
+
+}
+
+
+/*
+   MOBILE LOGIN
+*/
+
+.loginBtn1{
+
+    margin-top:20px;
+
+    padding:12px 28px;
+
+    border-radius:14px;
+
+    background:transparent;
+
+    border:1px solid #8b5cf6;
+
+    color:#9f67ff;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+    transition:.35s;
+
+}
+
+.loginBtn1:hover{
+
+    background:#8b5cf6;
+
+    color:white;
+
+    transform:translateY(-2px);
+
+    box-shadow:
+
+        0 12px 30px rgba(139,92,246,.35);
+
+}
+
+/*
+   OVERLAY
+*/
+
+.mobileOverlay{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.55);
+
+    backdrop-filter:blur(8px);
+
+    -webkit-backdrop-filter:blur(8px);
+
+    cursor:pointer;
+
+    z-index:9998;
+
+}
+
+/*
+   MOBILE
+*/
+
+@media(max-width:768px){
+
+    .navbar{
+
+        padding:0 20px;
+
+        height:75px;
+
+    }
+
+    .navLinks{
+
+        display:none;
+
+    }
+
+    .loginBtn{
+
+        display:none;
+
+    }
+
+    .menuIcon{
+
+        display:block;
+
+    }
+
+    .logo h2{
+
+        font-size:18px;
+
+    }
+
+    .logoBox{
+
+        width:40px;
+
+        height:40px;
+
+        font-size:16px;
+
+    }
+
+}
+
+/*
+   SMALL MOBILE
+*/
+
+@media(max-width:480px){
+
+    .navbar{
+
+        padding:0 16px;
+
+    }
+
+    .mobileMenu{
+
+        width:250px;
+
+    }
+
+    .mobileLinks a{
+
+        font-size:20px;
+
+    }
+
+    .loginBtn1{
+
+        width:85%;
+
+    }
+
+}

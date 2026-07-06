@@ -1,0 +1,99 @@
+.notFound{
+
+    min-height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    background:#050816;
+
+    color:white;
+
+    padding:20px;
+
+}
+
+.notFound h1{
+
+    font-size:140px;
+
+    color:#8b5cf6;
+
+    margin:0;
+
+    line-height:1;
+
+}
+
+.notFound h2{
+
+    font-size:40px;
+
+    margin:20px 0 10px;
+
+}
+
+.notFound p{
+
+    color:#9ca3af;
+
+    max-width:500px;
+
+    margin-bottom:35px;
+
+    line-height:1.7;
+
+}
+
+.notFoundButtons{
+
+    display:flex;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+}
+
+.notFoundButtons button{
+
+    padding:14px 28px;
+
+    border:none;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+    background:#8b5cf6;
+
+    color:white;
+
+    transition:.3s;
+
+}
+
+.notFoundButtons button:hover{
+
+    transform:translateY(-3px);
+
+}
+
+.secondaryBtn{
+
+    background:transparent;
+
+    border:1px solid #8b5cf6;
+
+}

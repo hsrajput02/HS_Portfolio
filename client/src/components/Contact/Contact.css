@@ -1,0 +1,460 @@
+/*
+   CONTACT SECTION
+*/
+
+.contact{
+
+    position:relative;
+
+    width:90%;
+
+    margin:120px auto;
+
+}
+
+/* Background Glow */
+
+.contact::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:360px;
+
+    height:360px;
+
+    left:-120px;
+
+    bottom:20px;
+
+    border-radius:50%;
+
+    background:rgba(124,58,237,.10);
+
+    filter:blur(120px);
+
+    z-index:-1;
+
+}
+
+/*
+   GRID
+*/
+
+.contactContainer{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:45px;
+
+    align-items:start;
+
+}
+
+/*
+   LEFT PANEL
+*/
+
+.contactInfo{
+
+    background:#0f172a;
+
+    border:1px solid rgba(255,255,255,.06);
+
+    border-radius:24px;
+
+    padding:40px;
+
+    transition:
+        transform .35s,
+        border-color .35s,
+        box-shadow .35s;
+
+}
+
+.contactInfo:hover{
+
+    transform:translateY(-5px);
+
+    border-color:#8b5cf6;
+
+    box-shadow:
+
+        0 22px 45px rgba(124,58,237,.18);
+
+}
+
+.contactInfo h3{
+
+    font-size:32px;
+
+    margin-bottom:20px;
+
+}
+
+.contactInfo p{
+
+    color:#bdbdbd;
+
+    line-height:1.8;
+
+    margin-bottom:35px;
+
+}
+
+/*
+   CONTACT ITEMS
+*/
+
+.contactList{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+}
+
+.contactItem{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+    padding:16px 18px;
+
+    border-radius:14px;
+
+    background:#111827;
+
+    transition:
+        transform .3s,
+        background .3s;
+
+}
+
+.contactItem:hover{
+
+    background:#1b2435;
+
+    transform:translateX(8px);
+
+}
+
+.contactItem svg{
+
+    color:#8b5cf6;
+
+    font-size:22px;
+
+    flex-shrink:0;
+
+}
+
+.contactItem span{
+
+    color:#d1d5db;
+
+    word-break:break-word;
+
+}
+
+/*
+   SOCIAL ICONS
+*/
+
+.contactSocial{
+
+    display:flex;
+
+    gap:18px;
+
+    margin-top:35px;
+
+}
+
+.contactSocial a{
+
+    width:50px;
+
+    height:50px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-radius:50%;
+
+    background:#111827;
+
+    color:white;
+
+    font-size:22px;
+
+    transition:
+        transform .35s,
+        background .35s,
+        box-shadow .35s;
+
+}
+
+.contactSocial a:hover{
+
+    background:#8b5cf6;
+
+    box-shadow:
+
+        0 12px 30px rgba(124,58,237,.30);
+
+}
+
+/*
+   FORM
+*/
+
+.contactForm{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+}
+
+.contactForm input,
+
+.contactForm textarea{
+
+    background:#0f172a;
+
+    color:white;
+
+    border:1px solid rgba(255,255,255,.06);
+
+    border-radius:16px;
+
+    padding:18px;
+
+    outline:none;
+
+    font-size:16px;
+
+    transition:
+        border-color .35s,
+        box-shadow .35s,
+        transform .35s;
+
+}
+
+.contactForm textarea{
+
+    resize:vertical;
+
+    min-height:180px;
+
+}
+
+.contactForm input::placeholder,
+
+.contactForm textarea::placeholder{
+
+    color:#8b8b8b;
+
+}
+
+.contactForm input:focus,
+
+.contactForm textarea:focus{
+
+    border-color:#8b5cf6;
+
+    box-shadow:
+
+        0 0 0 4px rgba(124,58,237,.18);
+
+    transform:translateY(-2px);
+
+}
+
+/*
+   BUTTON
+*/
+
+.contactForm button{
+
+    padding:18px;
+
+    border:none;
+
+    border-radius:16px;
+
+    background:linear-gradient(to right, #9c3de2, #5a5cf5);;
+
+    color:white;
+
+    cursor:pointer;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    transition:
+        transform .35s,
+        background .35s,
+        box-shadow .35s;
+
+}
+
+.contactForm button:hover{
+
+    background:#8b5cf6;
+
+    transform:translateY(-3px);
+
+    box-shadow:
+
+        0 18px 40px rgba(124,58,237,.30);
+
+}
+
+/*
+   STATUS
+*/
+
+.statusMessage{
+
+    text-align:center;
+
+    margin-top:35px;
+
+    color:#9ca3af;
+
+}
+
+.statusMessage.error{
+
+    color:#ef4444;
+
+}
+
+/*
+   TABLET
+*/
+
+@media(max-width:992px){
+
+.contact{
+
+    width:92%;
+
+}
+
+.contactContainer{
+
+    gap:35px;
+
+}
+
+.contactInfo{
+
+    padding:30px;
+
+}
+
+}
+
+/*
+   MOBILE
+*/
+
+@media(max-width:768px){
+
+.contact{
+
+    margin:90px auto;
+
+}
+
+.contactContainer{
+
+    grid-template-columns:1fr;
+
+}
+
+.contactInfo{
+
+    padding:24px;
+
+}
+
+.contactInfo h3{
+
+    font-size:28px;
+
+}
+
+.contactSocial{
+
+    justify-content:center;
+
+}
+
+}
+
+/*
+   SMALL MOBILE
+*/
+
+@media(max-width:480px){
+
+.contact{
+
+    width:94%;
+
+}
+
+.contactInfo{
+
+    padding:20px;
+
+}
+
+.contactInfo h3{
+
+    font-size:24px;
+
+}
+
+.contactItem{
+
+    padding:14px;
+
+}
+
+.contactForm input,
+
+.contactForm textarea{
+
+    padding:16px;
+
+}
+
+.contactForm button{
+
+    padding:16px;
+
+}
+
+}
+
+
+
