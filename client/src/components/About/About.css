@@ -32,8 +32,6 @@
 
     border-radius: 50%;
 
-    background: rgba(124, 58, 237, .12);
-
     filter: blur(100px);
 
     z-index: -1;

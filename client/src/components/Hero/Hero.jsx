@@ -14,6 +14,7 @@ import {
 } from "../../animations/variants";
 
 import {
+  FaDownload,
   FaGithub,
   FaLinkedin,
   FaInstagram,
@@ -150,12 +151,18 @@ function Hero() {
 
           <motion.a
             variants={staggerItem}
-            href={settings?.resume || "#"}
-            target="_blank"
+            href={
+              settings?.resume
+                ? settings.resume.replace(
+                  "/upload/",
+                  "/upload/fl_attachment/"
+                )
+                : "#"
+            }
             rel="noopener noreferrer"
           >
             <button className="primaryBtn">
-              Download Resume
+             <FaDownload />  Download Resume
             </button>
           </motion.a>
 

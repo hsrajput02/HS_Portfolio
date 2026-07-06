@@ -8,7 +8,7 @@ import {
   FaMapMarkerAlt,
   FaGraduationCap,
   FaEnvelope,
-  FaDownload,
+  FaFilePdf,
 } from "react-icons/fa";
 
 import useSettings from "../../hooks/useSettings";
@@ -224,9 +224,9 @@ function About() {
 
             <button className="resumeBtn">
 
-              <FaDownload />
+              <FaFilePdf />
 
-              Download Resume
+              View My Resume
 
             </button>
 

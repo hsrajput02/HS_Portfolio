@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 import { getSkills } from "../../api/portfolioApi";
+import Loader from "../common/Loader";
 import iconMap from "../../utils/iconMap";
 
 import {
@@ -15,30 +16,42 @@ import {
 function Skills() {
 
   const [skills, setSkills] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
 
   useEffect(() => {
-
-    const loadSkills = async () => {
-
-      try {
-
-        const res = await getSkills();
-
-        setSkills(res.data.data);
-
-      }
-
-      catch (error) {
-
-        console.error(error);
-
-      }
-
-    };
 
     loadSkills();
 
   }, []);
+
+  const loadSkills = async () => {
+
+    try {
+
+      setLoading(true);
+
+      const res = await getSkills();
+
+      setSkills(res.data.data);
+
+    }
+
+    catch (err) {
+
+      console.error(err);
+
+      setError("Failed to load skills.");
+
+    }
+
+    finally {
+
+      setLoading(false);
+
+    }
+
+  };
 
   return (
 
@@ -68,85 +81,149 @@ function Skills() {
 
       </motion.h2>
 
+      {loading && <Loader />}
 
+      {
 
-      <motion.div
+        error && (
 
-        className="skillsGrid"
+          <p className="statusMessage error">
 
-        variants={staggerContainer}
+            {error}
 
-        initial="hidden"
+          </p>
 
-        whileInView="visible"
+        )
 
-        viewport={{
-          once: true,
-          amount: .2,
-        }}
+      }
 
-      >
+      {
 
-        {
+        !loading &&
+        !error &&
+        skills.length === 0 && (
 
-          skills.map((skill) => {
+          <p className="statusMessage">
 
-            const Icon = iconMap[skill.icon];
+            No skills available.
 
-            return (
+          </p>
 
-              <motion.div
+        )
 
-                key={skill._id}
+      }
 
-                className="skillCard"
+      {
 
-                variants={staggerItem}
+        !loading &&
+        !error &&
+        skills.length > 0 && (
 
-                whileHover={{
-                  y: -8,
-                  scale: 1.05,
-                }}
+          <motion.div
 
-              >
+            className="skillsContainer"
 
-                {
+            variants={fadeUp}
 
-                  Icon && (
+            initial="hidden"
+
+            whileInView="visible"
+
+            viewport={{
+              once: true,
+              amount: .2,
+            }}
+
+          >
+
+            <motion.div
+
+              className="skillsGrid"
+
+              variants={staggerContainer}
+
+              initial="hidden"
+
+              whileInView="visible"
+
+              viewport={{
+                once: true,
+                amount: .2,
+              }}
+
+            >
+
+              {
+
+                skills.map((skill) => {
+
+                  const Icon = iconMap[skill.icon];
+
+                  return (
 
                     <motion.div
 
+                      key={skill._id}
+
+                      className="skillCard"
+
+                      variants={staggerItem}
+
                       whileHover={{
-                        rotate: 12,
-                        scale: 1.15,
+
+                        y: -8,
+
+                        scale: 1.05,
+
                       }}
 
                     >
 
-                      <Icon className="skillIcon" />
+                      {
+
+                        Icon && (
+
+                          <motion.div
+
+                            whileHover={{
+
+                              rotate: 12,
+
+                              scale: 1.15,
+
+                            }}
+
+                          >
+
+                            <Icon className="skillIcon" />
+
+                          </motion.div>
+
+                        )
+
+                      }
+
+                      <h3 className="skillName">
+
+                        {skill.name}
+
+                      </h3>
 
                     </motion.div>
 
-                  )
+                  );
 
-                }
+                })
 
-                <h3 className="skillName">
+              }
 
-                  {skill.name}
+            </motion.div>
 
-                </h3>
+          </motion.div>
 
-              </motion.div>
+        )
 
-            );
-
-          })
-
-        }
-
-      </motion.div>
-
+      }
 
     </section>
 
