@@ -1,10 +1,17 @@
 const multer = require("multer");
 const path = require("path");
+const fs = require("fs");
 
-// Store files temporarily in uploads/
+// Create uploads folder if it doesn't exist
+const uploadDir = path.join(__dirname, "../uploads");
+
+if (!fs.existsSync(uploadDir)) {
+  fs.mkdirSync(uploadDir, { recursive: true });
+}
+
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, "uploads/");
+    cb(null, uploadDir);
   },
 
   filename: function (req, file, cb) {
@@ -26,7 +33,6 @@ const fileFilter = (req, file, cb) => {
     "image/png",
     "image/jpg",
     "image/webp",
-
     "application/pdf",
 
   ];
@@ -38,9 +44,7 @@ const fileFilter = (req, file, cb) => {
   } else {
 
     cb(
-      new Error(
-        "Only Images and PDF files are allowed"
-      ),
+      new Error("Only Images and PDF files are allowed"),
       false
     );
 
